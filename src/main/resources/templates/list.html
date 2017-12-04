@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Twitter: The Dope Version</title>
+</head>
+<body>
+<a href="/add">What's Happening?</a><br/>
+<table>
+    <tr>
+        <th>Content</th>
+        <th>Posted Date</th>
+        <th>Sent By</th>
+    </tr>
+    <tr th:each="messages : ${messages}">
+        <td th:text="${messages.content}"></td>
+        <td th:date="${messages.posteddate}"></td>
+        <td th:text="${messages.sentby}"></td>
+        <td>
+            <a th:href="@{/detail/{id}(id=${messages.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${messages.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
