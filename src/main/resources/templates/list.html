@@ -14,7 +14,7 @@
     </tr>
     <tr th:each="messages : ${messages}">
         <td th:text="${messages.content}"></td>
-        <td th:date="${messages.posteddate}"></td>
+        <td th:text="${messages.posteddate}"></td>
         <td th:text="${messages.sentby}"></td>
         <td>
             <a th:href="@{/detail/{id}(id=${messages.id})}">Details</a>
